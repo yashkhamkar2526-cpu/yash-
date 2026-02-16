@@ -1,62 +1,122 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>User Validation Form</title>
-    <script>
-        function validateForm() {
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Yash Khamkar Resume</title>
 
-            var username = document.getElementById("username").value;
-            var password = document.getElementById("password").value;
-            var mobile = document.getElementById("mobile").value;
-
-            // Username Validation (Only letters, min 3 characters)
-            var usernamePattern = /^[A-Za-z]{3,}$/;
-
-            if (!usernamePattern.test(username)) {
-                alert("Username must contain only characters and minimum 3 letters.");
-                return false;
-            }
-
-            // Password Validation
-            // At least 8 characters, 1 uppercase, 1 lowercase, 1 digit, 1 special character
-            var passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/;
-
-            if (!passwordPattern.test(password)) {
-                alert("Password must contain minimum 8 characters, including uppercase, lowercase, digit and special character.");
-                return false;
-            }
-
-            // Mobile Number Validation (Exactly 10 digits)
-            var mobilePattern = /^[0-9]{10}$/;
-
-            if (!mobilePattern.test(mobile)) {
-                alert("Mobile number must contain exactly 10 digits.");
-                return false;
-            }
-
-            alert("Form Submitted Successfully!");
-            return true;
-        }
-    </script>
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background: #f3f4f6;
+  color: #111827;
+}
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+header {
+  text-align: center;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+}
+header h1 {
+  margin: 0;
+  font-size: 34px;
+}
+header p {
+  margin: 6px 0;
+  color: #4b5563;
+}
+section {
+  margin-bottom: 28px;
+}
+section h2 {
+  font-size: 22px;
+  margin-bottom: 12px;
+  color: #1f2933;
+  border-left: 4px solid #2563eb;
+  padding-left: 10px;
+}
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.skill {
+  background: #e0e7ff;
+  color: #1e3a8a;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+footer {
+  text-align: center;
+  font-size: 14px;
+  color: #6b7280;
+  margin-top: 30px;
+}
+</style>
 </head>
+
 <body>
+<div class="container">
 
-    <h2>User Registration Form</h2>
+<header>
+  <h1>Yash Khamkar</h1>
+  <p>Electronics & Telecommunication Engineering Student</p>
+  <p>Age: 19</p>
+</header>
 
-    <form onsubmit="return validateForm()">
-        
-        <label>Username:</label>
-        <input type="text" id="username" required><br><br>
+<section>
+<h2>Career Objective</h2>
+<p>
+Motivated Electronics & Telecommunication student seeking an opportunity to apply technical knowledge, gain hands-on experience, and contribute effectively to organizational growth while continuously improving my technical skills.
+</p>
+</section>
 
-        <label>Password:</label>
-        <input type="password" id="password" required><br><br>
+<section>
+<h2>Education</h2>
+<p><strong>Bachelor of Engineering (EXTC)</strong><br>
+Terna Engineering College</p>
+</section>
 
-        <label>Mobile Number:</label>
-        <input type="text" id="mobile" required><br><br>
+<section>
+<h2>Work Experience</h2>
+<p><strong>Sky Electronics – Bhiwandi</strong><br>
+Worked on basic electronics components handling, circuit understanding, and practical troubleshooting.</p>
+</section>
 
-        <input type="submit" value="Submit">
+<section>
+<h2>Technical Skills</h2>
+<div class="skills">
+  <div class="skill">Analog Electronics</div>
+  <div class="skill">Digital Electronics</div>
+  <div class="skill">Basic PCB Knowledge</div>
+  <div class="skill">Troubleshooting</div>
+</div>
+</section>
 
-    </form>
+<section>
+<h2>Hobbies & Interests</h2>
+<div class="skills">
+  <div class="skill">Online Gaming</div>
+  <div class="skill">Cricket</div>
+  <div class="skill">Video Editing</div>
+  <div class="skill">Documenting & Content Creation</div>
+</div>
+</section>
 
+<footer>
+© 2026 Yash Khamkar | Electronics & Telecommunication Student
+</footer>
+
+</div>
 </body>
 </html>
