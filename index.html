@@ -1,65 +1,62 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Arithmetic Operations</title>
+    <title>User Validation Form</title>
+    <script>
+        function validateForm() {
+
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var mobile = document.getElementById("mobile").value;
+
+            // Username Validation (Only letters, min 3 characters)
+            var usernamePattern = /^[A-Za-z]{3,}$/;
+
+            if (!usernamePattern.test(username)) {
+                alert("Username must contain only characters and minimum 3 letters.");
+                return false;
+            }
+
+            // Password Validation
+            // At least 8 characters, 1 uppercase, 1 lowercase, 1 digit, 1 special character
+            var passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/;
+
+            if (!passwordPattern.test(password)) {
+                alert("Password must contain minimum 8 characters, including uppercase, lowercase, digit and special character.");
+                return false;
+            }
+
+            // Mobile Number Validation (Exactly 10 digits)
+            var mobilePattern = /^[0-9]{10}$/;
+
+            if (!mobilePattern.test(mobile)) {
+                alert("Mobile number must contain exactly 10 digits.");
+                return false;
+            }
+
+            alert("Form Submitted Successfully!");
+            return true;
+        }
+    </script>
 </head>
 <body>
 
-    <h2>Arithmetic Operations using Switch Case</h2>
+    <h2>User Registration Form</h2>
 
-    <label>Enter First Number:</label>
-    <input type="number" id="num1"><br><br>
+    <form onsubmit="return validateForm()">
+        
+        <label>Username:</label>
+        <input type="text" id="username" required><br><br>
 
-    <label>Enter Second Number:</label>
-    <input type="number" id="num2"><br><br>
+        <label>Password:</label>
+        <input type="password" id="password" required><br><br>
 
-    <label>Select Operation:</label>
-    <select id="operator">
-        <option value="+">Addition (+)</option>
-        <option value="-">Subtraction (-)</option>
-        <option value="*">Multiplication (*)</option>
-        <option value="/">Division (/)</option>
-    </select><br><br>
+        <label>Mobile Number:</label>
+        <input type="text" id="mobile" required><br><br>
 
-    <button onclick="calculate()">Calculate</button>
+        <input type="submit" value="Submit">
 
-    <h3 id="result"></h3>
-
-<script>
-function calculate() {
-    var num1 = parseFloat(document.getElementById("num1").value);
-    var num2 = parseFloat(document.getElementById("num2").value);
-    var operator = document.getElementById("operator").value;
-    var result;
-
-    switch(operator) {
-        case "+":
-            result = num1 + num2;
-            break;
-
-        case "-":
-            result = num1 - num2;
-            break;
-
-        case "*":
-            result = num1 * num2;
-            break;
-
-        case "/":
-            if(num2 == 0) {
-                result = "Cannot divide by zero";
-            } else {
-                result = num1 / num2;
-            }
-            break;
-
-        default:
-            result = "Invalid Operation";
-    }
-
-    document.getElementById("result").innerHTML = "Result: " + result;
-}
-</script>
+    </form>
 
 </body>
 </html>
